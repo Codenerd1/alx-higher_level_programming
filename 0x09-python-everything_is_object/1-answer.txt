@@ -1,2 +1,4 @@
 #!/usr/bin/python3
-print("id")
+from __future__ import print_function
+
+print ("id")
