@@ -1,4 +1,3 @@
-#!/usr/bin/python
-from __future__ import print_function
-
-print "id"
+#!/usr/bin/python3
+def id(variable):
+    return built_in_id(variable)
