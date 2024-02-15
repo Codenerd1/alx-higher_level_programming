@@ -1,0 +1,1 @@
+This project has tought me more about object-oriented programming I covered much about class methods, static methods,class vs instance attributes including how to use special __str_- and __ repr methods
