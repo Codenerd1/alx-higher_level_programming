@@ -40,11 +40,24 @@ class Rectangle:
             self.__height = value
 
         def area(self):
-            'Returns the area of the rectangle'
+            """Returns the area of the rectangle"""
             return (self.__width * self.__height)
 
         def perimeter(self):
-            'Returns the perimeter of the rectangle'
+            """Returns the perimeter of the rectangle"""
             if self.__width == 0 or self.__height == 0:
                 return (0)
             return ((self.__width * 2) + (self.__height * 2))
+
+        def __str__(self):
+            """Returns the printable representation of the rectangle.
+            Represents a rectangle with the # charachter."""
+            if self.__width == 0 or self.__height == 0:
+                return ("")
+
+            rect = []
+            for i in range(self.__height):
+                [rect.append('#') for j in range(self.__width)]
+                if i != self.__height - 1:
+                    rect.append("\n")
+            return ("".join(rect))
