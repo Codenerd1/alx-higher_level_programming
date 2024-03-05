@@ -52,6 +52,27 @@ class Rectangle:
                 return (0)
             return ((self.__width * 2) + (self.__height * 2))
 
+        @staticmethod
+        def bigger_or_equal(rect_1, rect_2):
+            """Returns the rectangle with the larger area.
+                Args:
+                    rect_1 (rectangle): the first rectangle.
+                    rect_2 (rectangle): the second rectangle.
+                Returns:
+                    TypeError: When rect_1 or rect_2 is not a rectangle."""
+
+            if not isinstance(rect_1, Rectangle):
+                raise TypeError("rect_1 must be an instance of a rectangle.")
+            if not isinstance(rect_2, Rectangle):
+                raise TypeError("rect_2 must be an instance of a rectangle.")
+            area_1 = rect_1.area()
+            area_2 = rect_2.area()
+
+            return rect_1 if rect_1 >= rect_2 else rect_2
+
+        @classmethod
+        def square(cls, size=0)
+        return cls(size, size)
 
         def __str__(self):
             """Returns the printable representation of the rectangle.
@@ -76,24 +97,3 @@ class Rectangle:
             """Returns a message for every deletion of a rectangle"""
             type(self).number_of_instances -= 1
             print("Bye rectangle...")
-
-        @staticmethod
-        def bigger_or_equal(rect_1, rect_2):
-            """Returns the rectangle with the biggest area.
-            Args:
-                rect_1 (rectangle): the first rectangle.
-                rect_2 (rectangle): the second rectangle.
-            Returns:
-                TypeError: If either rect_1 or rect_2 is not a rectangle."""
-            if not isinstance(rect_1, Rectangle):
-                raise TypeError("rect_1 must be an instance of a rectangle.")
-            if not isinstance(rect_2, Rectangle):
-                raise TypeError("rect_2 must be an instance of a rectangle.")
-
-            area_1 = rect_1.area()
-            area_2 = rect_2.area()
-
-            return rect_1 if rect_1 >= rect_2 else rect_2)
-
-        def square(cls, size=0):
-            return cls(size, size)
