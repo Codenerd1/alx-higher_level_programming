@@ -1,99 +1,99 @@
-================================
-How to use 5-text_indentation.py
-================================
+== == == == == == == == == == == == == == == ==
+How to use 5 - text_indentation.py
+== == == == == == == == == == == == == == == ==
 
-This module defines a text-identation function ''text_identation(text)''
+This module defines a text - identation function ''text_identation(text)''
 
 Usage
-=====
+== == =
 
-Text is printed with a new line after each of the following charachters:
-''.'', '':'' and ''?''
+Text is printed with a new line after each of the following charachters
+''.'', '': '' and ''?''
 
 :
 
-	>>> text_identation = __import__('5-text_indentation').text_indentation
-	>>> text_indentation("How are you?")
-	How are you
-	<BLANKLINE>
+    >> > text_identation = __import__('5-text_indentation').text_indentation
+    >> > text_indentation("How are you?")
+    How are you
+    <BLANKLINE >
 
 No spaces are printed at the beginning of a line.
 
 :
 
-        >>> text_indentation("	How are you?")
-        How are you
-        <BLANKLINE>
+    >> > text_indentation("	How are you?")
+    How are you
+    <BLANKLINE >
 
 :
 
-	>>> text_indentation("		")
+    >> > text_indentation("		")
 
 similarly, no spaces are printed at the end of a line.
 
 :
 
-        >>> text_indentation("	How are you?	My name is Job.	")
-        How are you
-        <BLANKLINE>
-	My name is Job
-	<BLANKLINE>
+    >> > text_indentation("	How are you?	My name is Job.	")
+    How are you
+    <BLANKLINE >
+    My name is Job
+    <BLANKLINE >
 
-Texts that dont end with either charachters: ''.'', '':'' and ''?'' are
+Texts that dont end with either charachters: ''.'', '': '' and ''?'' are
 not ended with a new line.
 
 :
 
-	>>> text_indentation("Have you been arrested before? I dont think so")
-	Have you been arrested before
-	<BLANKLINE>
-	I dont think so
+    >> > text_indentation("Have you been arrested before? I dont think so")
+    Have you been arrested before
+    <BLANKLINE >
+    I dont think so
 
 New lines within a string are printed as normal.
 
 :
 
-	>>> text_indentation("Have you been arrested before? I dont think so\n")
-	Have you been arrested before
-        <BLANKLINE>
-        I dont think so
-	<BLANKLINE>
+    >> > text_indentation("Have you been arrested before? I dont think so\n")
+    Have you been arrested before
+    <BLANKLINE >
+    I dont think so
+    <BLANKLINE >
 
 :
 
-	>>> text_indentation("\n\n\n i think you needed three new lines.")
-	<BLANKLINE>
-	<BLANKLINE>
-	<BLANKLINE>
-	i think you needed three new lines
-	<BLANKLINE>
+    >> > text_indentation("\n\n\n i think you needed three new lines.")
+    <BLANKLINE >
+    <BLANKLINE >
+    <BLANKLINE >
+    i think you needed three new lines
+    <BLANKLINE >
 
 :
 
-	>>> text_indentation("You are a sneaky \n new line")
-	You are a sneaky
-	<BLANKLINE>
-	new line
+    >> > text_indentation("You are a sneaky \n new line")
+    You are a sneaky
+    <BLANKLINE >
+    new line
 
 Invalid text
-============
+== == == == == ==
 
 Parameter ''text'' must be a string, otherwise a TypeError is raised.
 
 :
 
-	>>> text_indentation(7)
-	Traceback (most recent call last):
-	TypeError: text must be a string
-
-:
-
-	>>> text_indentation("three": 3, "four": 4)
-        Traceback (most recent call last):
+    >> > text_indentation(7)
+    Traceback(most recent call last):
         TypeError: text must be a string
 
 :
 
-	>>> text_indentation(None)
-        Traceback (most recent call last):
+    >> > text_indentation("three": 3, "four": 4)
+    Traceback(most recent call last):
+        TypeError: text must be a string
+
+:
+
+    >> > text_indentation(None)
+    Traceback(most recent call last):
         TypeError: text must be a string

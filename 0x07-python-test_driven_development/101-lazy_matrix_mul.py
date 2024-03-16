@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """A function to define lazy matrix multiplication."""
 
+
 def lazy_matrix_mul(m_a, m_b):
     """Return the multiplication of two matrices.
 
