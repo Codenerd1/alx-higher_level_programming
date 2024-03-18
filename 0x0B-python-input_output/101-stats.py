@@ -30,7 +30,7 @@ if __name__ == "__main__":
 
     try:
         for line in sys.stdin:
-            if count == 10:
+            if count == 9:
                 print_stats(size, status_codes)
                 count = 1
             else:
