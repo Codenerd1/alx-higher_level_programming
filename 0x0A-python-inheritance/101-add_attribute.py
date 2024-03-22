@@ -2,7 +2,7 @@
 """Defines a function that adds attributes to objects."""
 
 
-def add_attribute(obj, attr, value):
+def add_attribute(obj, att, value):
     """Add a new attribute to an object if possible.
 
         Args:
@@ -13,6 +13,6 @@ def add_attribute(obj, attr, value):
             TypeError: If the attribute cannot be added.
     """
     if isinstance(obj, object):
-        setattr(obj, attr, value)
+        setattr(obj, att, value)
     else:
         raise TypeError("can't add new attribute")
