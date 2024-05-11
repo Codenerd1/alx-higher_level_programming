@@ -6,11 +6,11 @@ def delete_at(my_list=[], idx=0):
     if idx < 0 or idx >= len(my_list):
         return my_list
 
-    # Create a new list by iterating over the original list
-    new_list = []
-    for i in range(len(my_list)):
-        # Add elements to the new list except the one at the specified index
-        if i != idx:
-            new_list.append(my_list[i])
+    # Iterate over the list and shift elements to the left
+    for i in range(idx, len(my_list) - 1):
+        my_list[i] = my_list[i + 1]
 
-    return new_list
+    # Delete the last element which has been duplicated at the end
+    del my_list[-1]
+
+    return my_list
