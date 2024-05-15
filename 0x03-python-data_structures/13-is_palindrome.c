@@ -1,63 +1,55 @@
-#include <stddef.h> // For NULL definition
-#include <stdlib.h> // For malloc and free functions
 #include "lists.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 /**
- * Definition for singly-linked list.
- * struct listint_s {
- * 	int n;
- * 	struct listint_S *next;
- * };
- * typedef struct listint_s listint_t;
+ * add_nodeint - adds a new node at the beginning of listint_t
+ * @head: head of listint_t
+ * @n: int to add to listint_t list
+ * Return: address of the new element, or NULL if it failed
+ *
  */
+listint_t *add_nodeint(listint_t **head, const int n)
+{
+	listint_t *new;
+	new = malloc(sizeof(listint_t));
+	if (new == NULL)
+		return (NULL);
+	new->n = n;
+	new->next = *head;
+	*head = new;
+	return (new);
+}
 
 /**
- * is_palindrome - Checks if a singly linked list is a palindrome
- * @head: Pointer to pointer to the head of the list
- * Return: 0 if it is not a palindrome, 1 if it is a palindrome
+ * is_palindrome - checks if a singly linked list is palindrome
+ * @head: head of listint_t
+ * Return: 1 if palindrome, 0 if else
+ *
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *current = *head;
-	int *array;
-	int size = 0; // To store the size of the list
+	listint_t *head2 = *head;
+	listint_t *aux = NULL, *aux2 = NULL;
 
-	// Empty list is considered a palindrome
-	if (current == NULL)
-		return 1;
-
-	// Calculate the size of the list
-	while (current != NULL)
+	if (*head == NULL || head2->next == NULL)
+		return (1);
+	while (head2 != NULL)
 	{
-		size ++;
-		current = current->next;
+		add_nodeint(&aux, head2->n);
+		head2 = head2->next;
 	}
-
-	// Allocate memory for the array dynamically
-	array = malloc(size * sizeof(int));
-	if (array == NULL)
-		return 0; // Memory allocation failed, not a palindrome
-
-	// Reset current pointer to the head of the list
-	current = *head;
-
-	// Store elements of the list in the array
-	for (int i = 0; i < size; i++)
+	aux2 = aux;
+	while (*head != NULL)
 	{
-		array[i] = current->n;
-		current = current->next;
-	}
-
-	// Compare elements from the start and end of the array
-	for (int i = 0, j = size - 1; i < j; i++, j--)
-	{
-		if (array[i] != array[j])
+		if ((*head)->n != aux2->n)
 		{
-			free(array); // Free dynamically allocated memory
-			return 0; // Not a palindrome
+			free_listint(aux);
+			return (0);
 		}
+		*head = (*head)->next;
+		aux2 = aux2->next;
 	}
-
-	free(array); // Free dynamically allocated memory
-	return 1;
+	free_listint(aux);
+	return (1);
 }
