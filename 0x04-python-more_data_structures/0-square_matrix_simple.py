@@ -11,7 +11,7 @@ def square_matrix_simple(matrix=[]):
         squared_row = []
         # Iterate over the elements of the current row
         for element in row:
-            # Compute the square of the element and append it to the squared row
+            # Compute the square of the element and append it to squared row
             squared_row.append(element ** 2)
         # Append the squared row to the squared matrix
         squared_matrix.append(squared_row)
