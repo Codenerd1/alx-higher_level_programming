@@ -18,7 +18,7 @@ def best_score(a_dictionary):
 
     # Initialize variables to keep track of the best score
     best_key = None
-    best_value = float('-inf') # Initialize to negative infinity to ensure
+    best_value = float('-inf')  # Initialize to negative infinity to ensure
     # any value is greater.
 
     # Iterate over the dictionary items
