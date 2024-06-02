@@ -5,19 +5,15 @@ class Rectangle {
       this.width = w;
       this.height = h;
     } else {
-      // Handle the case where w or h is invalid by not setting properties
-      this.width = undefined;
-      this.height = undefined;
     }
   }
 
   print () {
     if (this.width && this.height) {
       for (let i = 0; i < this.height; i++) {
-        console.log('X'.repeat(this.width));
+        console.log('x'.repeat(this.width));
       }
     }
   }
 }
-
 module.exports = Rectangle;
