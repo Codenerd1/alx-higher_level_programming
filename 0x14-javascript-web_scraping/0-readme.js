@@ -1,6 +1,5 @@
 #!/usr/bin/node
 const fs = require('fs');
-const path = require('path');
 
 // Get the file path from the command-line arguments
 const filePath = process.argv[2];
