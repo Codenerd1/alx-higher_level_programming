@@ -6,11 +6,6 @@ const fs = require('fs');
 const url = process.argv[2];
 const filePath = process.argv[3];
 
-if (!url || !filePath) {
-  console.error('Please provide a URL and a file path as arguments.');
-  process.exit(1);
-}
-
 // Send a GET request to the specified URL
 request(url, (error, response, body) => {
   if (error) {
