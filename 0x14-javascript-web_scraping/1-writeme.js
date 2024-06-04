@@ -16,6 +16,4 @@ fs.writeFile(filePath, content, 'utf8', (err) => {
     console.error(err);
     process.exit(2);
   }
-  console.log();
-  process.exit(0);
 });
