@@ -35,11 +35,10 @@ request(apiUrl, (error, response, body) => {
           count++;
         }
       });
-
-      console.log(count);
     } catch (parseError) {
       console.error(parseError);
       process.exit(5);
     }
+      console.log(count);
   }
 });
