@@ -30,7 +30,7 @@ request(apiUrl, (error, response, body) => {
 
       // Loop through each film and check if "Wedge Antilles" is present
       films.forEach(film => {
-        if (film.characters.includes('https://swapi-api.alx-tools.com/api/people/18/')) {
+        if (film.characters.includes(wedgeAntillesUrl)) {
           count++;
         }
       });
@@ -38,6 +38,7 @@ request(apiUrl, (error, response, body) => {
       console.log(count);
     } catch (parseError) {
       console.error(parseError);
+      process.exit(5);
     }
   }
 });
