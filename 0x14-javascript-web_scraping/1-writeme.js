@@ -6,12 +6,12 @@ const filePath = process.argv[2];
 const content = process.argv[3];
 
 if (!filePath || !content) {
-  console.error('Please provide a file path and a string to write as arguments.');
+  console.error(err);
   process.exit(1);
 }
 
 // Write the content of the file in UTF-8 encoding
-fs.appendFile(filePath, content, 'utf8', (err) => {
+fs.writeFile(filePath, content, 'utf8', (err) => {
   if (err) {
     console.error(err);
     process.exit(2);
