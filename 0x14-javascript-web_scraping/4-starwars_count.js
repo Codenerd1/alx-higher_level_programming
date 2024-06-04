@@ -17,8 +17,16 @@ request(apiUrl, (error, response, body) => {
     console.error(response.statusCode);
   } else {
     try {
-      const films = JSON.parse(body).results;
+      const parsedBody = JSON.parse(body);
+      const films = parsedBody.results;
+
+      if (!films) {
+        console.error('No films found in the API response.');
+        process.exit(4);
+      }
+
       let count = 0;
+      const wedgeAntillesUrl = 'https://swapi-api.alx-tools.com/api/people/18/';
 
       // Loop through each film and check if "Wedge Antilles" is present
       films.forEach(film => {
