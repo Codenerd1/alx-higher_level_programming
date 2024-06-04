@@ -1,0 +1,34 @@
+#!/usr/bin/node
+const request = require('request');
+
+// Get the API URL from the command-line arguments
+const apiUrl = process.argv[2];
+
+// Send a GET request to the proided API URL
+request(apiUrl, (error, response, body) => {
+  if (error) {
+    console.error(error);
+  } else if (response.statusCode !== 200) {
+    console.error(response.statusCode);
+  } else {
+    try {
+      const todos = JSON.parse(body);
+      const completedTasks = {};
+
+      // Loop through each todo item
+      todos.forEach(todo => {
+        if (todo.completed) {
+          if (!completedTasks[todo.userId]) {
+            completedTasks[todo.userId] = 0;
+          }
+          completedTasks[todo.userId]++;
+        }
+      });
+
+      // Print users with completed tasks
+      console.log(JSON.stringify(completedTasks, null, 2));
+    } catch (parseError) {
+      console.error(parseError);
+    }
+  }
+});
