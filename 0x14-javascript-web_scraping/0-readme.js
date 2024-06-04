@@ -12,8 +12,8 @@ if (!filePath) {
 // Read the file content in UTF-8 encoding
 fs.readFile(filePath, 'utf8', (err, data) => {
   if (err) {
-    console.error('Error reading the file:', err);
+    console.error(err);
   } else {
-    console.log('File content:\n', data);
+    console.log(data);
   }
 });
