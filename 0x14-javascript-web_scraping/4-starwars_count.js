@@ -4,6 +4,11 @@ const request = require('request');
 // Get the API URL from the command line arguments
 const apiUrl = process.argv[2];
 
+if (!apiUrl) {
+  console.error('Please provide the API URL as the first argument.');
+  process.exit(1);
+}
+
 // Send a GET request to Star Wars API
 request(apiUrl, (error, response, body) => {
   if (error) {
