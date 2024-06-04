@@ -10,14 +10,11 @@ if (!filePath) {
   process.exit(1);
 }
 
-// Resolve the file path to ensure it's absolute
-const absoluteFilePath = path.resolve(filePath);
-
 // Read the file content in UTF-8 encoding
-fs.readFile(absoluteFilePath, 'utf8', (err, data) => {
+fs.readFile(filePath, 'utf8', (err, data) => {
   if (err) {
     console.error('Error reading the file:', err);
   } else {
-    console.log('\n', data);
+    console.log('File content:\n', data);
   }
 });
