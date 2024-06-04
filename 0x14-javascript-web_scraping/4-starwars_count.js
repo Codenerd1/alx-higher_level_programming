@@ -13,6 +13,7 @@ if (!apiUrl) {
 request(apiUrl, (error, response, body) => {
   if (error) {
     console.error(error);
+    process.exit(2);
   } else if (response.statusCode !== 200) {
     console.error(response.statusCode);
   } else {
