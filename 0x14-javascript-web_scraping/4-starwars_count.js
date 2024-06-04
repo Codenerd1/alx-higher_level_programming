@@ -5,7 +5,7 @@ const request = require('request');
 const apiUrl = process.argv[2];
 
 if (!apiUrl) {
-  console.error();
+  console.error('Please provide the API URL as the first argument.');
   process.exit(1);
 }
 
@@ -17,7 +17,7 @@ request(apiUrl, (error, response, body) => {
     console.error(response.statusCode);
   } else {
     try {
-      const films = JSON.parse(body).results;
+      const films = JSON.parse(body);
       let count = 0;
 
       // Loop through each film and check if "Wedge Antilles" is present
