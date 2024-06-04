@@ -26,7 +26,7 @@ request(apiUrl, (error, response, body) => {
         process.exit(4);
       }
 
-      let count = 0;
+      const count = 0;
       const wedgeAntillesUrl = 'https://swapi-api.alx-tools.com/api/people/18/';
 
       // Loop through each film and check if "Wedge Antilles" is present
