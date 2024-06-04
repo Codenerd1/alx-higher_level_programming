@@ -12,7 +12,7 @@ request(apiUrl, (error, response, body) => {
     console.error(response.statusCode);
   } else {
     try {
-      const films = JSON.parse(body);
+      const films = JSON.parse(body).results;
       let count = 0;
 
       // Loop through each film and check if "Wedge Antilles" is present
