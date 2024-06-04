@@ -34,11 +34,11 @@ request(apiUrl, (error, response, body) => {
         if (film.characters.includes(wedgeAntillesUrl)) {
           count++;
         }
+      console.log(count);
       });
     } catch (parseError) {
       console.error(parseError);
       process.exit(5);
     }
-      console.log(count);
   }
 });
