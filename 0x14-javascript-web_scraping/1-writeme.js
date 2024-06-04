@@ -11,7 +11,7 @@ if (!filePath || !content) {
 }
 
 // Write the content of the file in UTF-8 encoding
-fs.writeFile(filePath, content, 'utf8', (err) => {
+fs.appendFile(filePath, content, 'utf8', (err) => {
   if (err) {
     console.error(err);
     process.exit(2);
