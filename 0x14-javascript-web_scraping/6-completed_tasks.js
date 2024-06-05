@@ -4,6 +4,11 @@ const request = require('request');
 // Get the API URL from the command-line arguments
 const apiUrl = process.argv[2];
 
+if (!apiUrl) {
+  process.stderr.write('Usage: ./6-completed_tasks.js <API_URL>\n');
+  process.exit(1);
+}
+
 // Send a GET request to the provided API URL
 request(apiUrl, (error, response, body) => {
   if (error) {
