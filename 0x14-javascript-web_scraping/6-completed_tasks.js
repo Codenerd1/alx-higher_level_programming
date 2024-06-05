@@ -7,9 +7,9 @@ const apiUrl = process.argv[2];
 // Send a GET request to the provided API URL
 request(apiUrl, (error, response, body) => {
   if (error) {
-    process.stderr.write(error);
+    process.stderr.write(error + '\n');
   } else if (response.statusCode !== 200) {
-    process.stderr.write(response.statusCode);
+    process.stderr.write(response.statusCode + '\n');
   } else {
     try {
       const todos = JSON.parse(body);
@@ -26,9 +26,9 @@ request(apiUrl, (error, response, body) => {
       });
 
       // Print users with completed tasks
-      process.stdout.write(JSON.stringify(completedTasks, null, 2));
+      process.stdout.write(JSON.stringify(completedTasks, null, 2) + '\n');
     } catch (parseError) {
-      process.stderr.write(parseError);
+      process.stderr.write(parseError + '\n');
     }
   }
 });
