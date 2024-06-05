@@ -4,7 +4,7 @@ const request = require('request');
 // Get the API URL from the command-line arguments
 const apiUrl = process.argv[2];
 
-// Send a GET request to the proided API URL
+// Send a GET request to the provided API URL
 request(apiUrl, (error, response, body) => {
   if (error) {
     console.error(error);
@@ -26,7 +26,7 @@ request(apiUrl, (error, response, body) => {
       });
 
       // Print users with completed tasks
-      console.log(JSON.stringify(completedTasks, null, 2));
+      process.stdout.write(JSON.stringify(completedTasks, null, 2));
     } catch (parseError) {
       console.error(parseError);
     }
