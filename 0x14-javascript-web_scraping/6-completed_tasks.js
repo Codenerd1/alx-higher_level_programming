@@ -31,10 +31,8 @@ request(apiUrl, (error, response, body) => {
       });
 
       // Print users with completed tasks
-      for (const userId in completedTasks) {
-        const message = userId + ': ' + completedTasks[userId] + '\n';
-        process.stdout.write(message);
-      }
+      console.log(JSON.stringify(completedTasks, null, 2));
+      // process.stdout.write(output);
     } catch (parseError) {
       process.stderr.write(parseError + '\n');
     }
