@@ -24,7 +24,7 @@ request(url, (error, response, body) => {
       const characters = movie.characters;
 
       // Fetch and print character names in the order they appear in the movie
-      characters.forEach(characterUrl => {
+      characters.forEach((characterUrl, index) => {
         request(characterUrl, (characterError, characterResponse, characterBody) => {
           if (characterError) {
             console.error(characterError);
@@ -33,8 +33,14 @@ request(url, (error, response, body) => {
           } else {
             const character = JSON.parse(characterBody);
             console.log(character.name);
+
+            // Check if it's the last charachter to be printed, if so, exit
+            if (index === characterUrl.length - 1) {
+              process.exit(0);
+            }
           }
-        });
+        }
+        );
       });
     } catch (parseError) {
       console.error(parseError);
